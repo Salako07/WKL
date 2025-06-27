@@ -1,0 +1,93 @@
+wokkahlearn/
+├── backend/
+│   ├── wokkahlearn/
+│   │   ├── __init__.py
+│   │   ├── settings.py
+│   │   ├── urls.py
+│   │   ├── wsgi.py
+│   │   ├── asgi.py
+│   │   └── celery.py
+│   ├── accounts/
+│   │   ├── __init__.py
+│   │   ├── models.py          # User, UserProfile, UserSkill, UserAchievement, Organization
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── serializers.py
+│   │   └── migrations/
+│   ├── courses/
+│   │   ├── __init__.py
+│   │   ├── models.py          # Course, Module, Lesson, Exercise, CourseEnrollment, etc.
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── serializers.py
+│   │   └── migrations/
+│   ├── ai_tutor/
+│   │   ├── __init__.py
+│   │   ├── models.py          # AITutorSession, AIMessage, LearningPathRecommendation
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── serializers.py
+│   │   ├── services.py
+│   │   └── migrations/
+│   ├── code_execution/
+│   │   ├── __init__.py
+│   │   ├── models.py          # ExecutionEnvironment, CodeExecution, TestCase, etc.
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── serializers.py     # Your existing content
+│   │   ├── services.py        # CodeExecutionService (from your existing file)
+│   │   └── migrations/
+│   ├── collaboration/
+│   │   ├── __init__.py
+│   │   ├── models.py          # CollaborationRoom, RoomParticipant, ChatMessage
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py           # Your existing content
+│   │   ├── urls.py
+│   │   ├── serializers.py
+│   │   ├── consumers.py       # WebSocket consumers
+│   │   └── migrations/
+│   ├── analytics/
+│   │   ├── __init__.py
+│   │   ├── models.py          # LearningAnalytics, StudySession, PerformanceMetric
+│   │   ├── admin.py
+│   │   ├── apps.py
+│   │   ├── views.py
+│   │   ├── urls.py
+│   │   ├── serializers.py
+│   │   ├── services.py
+│   │   └── migrations/
+│   ├── api/
+│   │   ├── __init__.py
+│   │   ├── urls.py
+│   │   ├── serializers.py     # Your existing content
+│   │   ├── views.py           # Your existing content
+│   │   └── permissions.py
+│   ├── requirements.txt
+│   ├── requirements-test.txt
+│   └── manage.py
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── components/
+│   │   ├── contexts/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── services/
+│   │   ├── store/
+│   │   ├── utils/
+│   │   └── App.tsx
+│   ├── package.json
+│   └── tsconfig.json
+├── docker-compose.yml
+├── .env.example
+└── scripts/
+    └── deploy.sh
