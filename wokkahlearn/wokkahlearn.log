@@ -92,3 +92,4 @@ INFO 2025-06-30 07:47:17,773 autoreload 23180 19060 Watching for file changes wi
 INFO 2025-06-30 07:52:16,145 autoreload 23180 19060 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
 INFO 2025-06-30 07:52:18,547 autoreload 2832 20764 Watching for file changes with StatReloader
 INFO 2025-06-30 07:52:54,853 autoreload 2832 20764 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 07:52:56,568 autoreload 14672 9952 Watching for file changes with StatReloader
