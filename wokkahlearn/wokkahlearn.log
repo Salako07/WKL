@@ -1,0 +1,16 @@
+INFO 2025-06-29 21:57:35,097 autoreload 14284 21744 Watching for file changes with StatReloader
+INFO 2025-06-29 22:00:48,797 autoreload 18100 21108 Watching for file changes with StatReloader
+INFO 2025-06-29 22:09:18,588 autoreload 20584 4320 Watching for file changes with StatReloader
+INFO 2025-06-29 22:11:44,657 autoreload 20584 4320 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-29 22:11:48,411 autoreload 19080 15984 Watching for file changes with StatReloader
+INFO 2025-06-29 22:12:24,558 autoreload 19080 15984 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-29 22:37:16,662 autoreload 20388 7008 Watching for file changes with StatReloader
+INFO 2025-06-29 22:41:12,305 autoreload 19440 19884 Watching for file changes with StatReloader
+INFO 2025-06-29 22:41:42,087 autoreload 19440 19884 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-29 22:41:45,656 autoreload 21408 20832 Watching for file changes with StatReloader
+INFO 2025-06-29 22:41:59,841 autoreload 21408 20832 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-29 22:42:03,655 autoreload 22464 21280 Watching for file changes with StatReloader
+INFO 2025-06-29 22:42:12,055 autoreload 22464 21280 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-29 22:42:17,811 autoreload 18504 12768 Watching for file changes with StatReloader
+INFO 2025-06-29 22:55:19,641 autoreload 19944 14620 Watching for file changes with StatReloader
+INFO 2025-06-29 23:01:33,683 autoreload 19944 14620 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.

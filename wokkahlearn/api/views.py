@@ -353,3 +353,18 @@ class AnalyticsViewSet(viewsets.ReadOnlyModelViewSet):
         
         serializer = PerformanceMetricSerializer(metrics, many=True)
         return Response(serializer.data)
+    
+from django.http import JsonResponse
+
+# Error handlers for API
+def bad_request(request, exception):
+    return JsonResponse({'error': 'Bad Request', 'status': 400}, status=400)
+
+def permission_denied(request, exception):
+    return JsonResponse({'error': 'Permission Denied', 'status': 403}, status=403)
+
+def not_found(request, exception):
+    return JsonResponse({'error': 'Not Found', 'status': 404}, status=404)
+
+def server_error(request):
+    return JsonResponse({'error': 'Internal Server Error', 'status': 500}, status=500)

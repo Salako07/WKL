@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AiTutorConfig(AppConfig):
+class HealthCheckConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'ai_tutor'
+    name = 'health_check'

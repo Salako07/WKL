@@ -4,7 +4,7 @@ from django.db import models
 from django.core.validators import RegexValidator
 from django.utils.translation import gettext_lazy as _
 import uuid
-
+from datetime import timedelta
 
 class User(AbstractUser):
     """Custom user model with role-based access"""
@@ -43,7 +43,7 @@ class User(AbstractUser):
     
     # Activity tracking
     last_activity = models.DateTimeField(null=True, blank=True)
-    total_study_time = models.DurationField(default=0)
+    total_study_time = models.DurationField(default=timedelta)
     courses_completed = models.PositiveIntegerField(default=0)
     
     # Verification and status
@@ -61,11 +61,32 @@ class User(AbstractUser):
     email_notifications = models.BooleanField(default=True)
     marketing_emails = models.BooleanField(default=False)
     
+    # FIX: Add related_name to avoid conflicts with built-in User model
+    groups = models.ManyToManyField(
+        'auth.Group',
+        verbose_name=_('groups'),
+        blank=True,
+        help_text=_(
+            'The groups this user belongs to. A user will get all permissions '
+            'granted to each of their groups.'
+        ),
+        related_name="custom_user_set",  # ADDED THIS
+        related_query_name="custom_user",  # ADDED THIS
+    )
+    user_permissions = models.ManyToManyField(
+        'auth.Permission',
+        verbose_name=_('user permissions'),
+        blank=True,
+        help_text=_('Specific permissions for this user.'),
+        related_name="custom_user_set",  # ADDED THIS
+        related_query_name="custom_user",  # ADDED THIS
+    )
+    
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username', 'first_name', 'last_name']
     
     class Meta:
-        db_table = 'auth_user'
+        db_table = 'auth_user'  # Use the same table as Django's default User
         verbose_name = _('User')
         verbose_name_plural = _('Users')
     

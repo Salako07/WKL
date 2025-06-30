@@ -154,7 +154,7 @@ class TestCase(models.Model):
         CUSTOM = 'custom', _('Custom Test')
     
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    exercise = models.ForeignKey('courses.Exercise', on_delete=models.CASCADE, related_name='test_cases')
+    exercise = models.ForeignKey('courses.Exercise', on_delete=models.CASCADE, related_name='test_case_object')
     name = models.CharField(max_length=200)
     test_type = models.CharField(max_length=20, choices=TestType.choices)
     description = models.TextField(blank=True)

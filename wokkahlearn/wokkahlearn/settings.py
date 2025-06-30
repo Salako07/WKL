@@ -42,7 +42,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     'accounts',
     'courses',
-    'learning',
+    #'learning',
     'ai_tutor',
     'code_execution',
     'collaboration',
@@ -80,8 +80,14 @@ TEMPLATES = [
         },
     },
 ]
+import os
+from django.core.wsgi import get_wsgi_application
 
-WSGI_APPLICATION = 'wokkahlearn.wsgi.application'
+# CRITICAL: Make sure this points to the correct settings module
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wokkahlearn.settings')
+
+application = get_wsgi_application()
+#WSGI_APPLICATION = 'wokkahlearn.wsgi.application'
 ASGI_APPLICATION = 'wokkahlearn.asgi.application'
 
 # Database configuration
@@ -93,9 +99,9 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME', 'wokkahlearn'),
+            'NAME': os.getenv('DB_NAME', 'WokkahLearn'),
             'USER': os.getenv('DB_USER', 'postgres'),
-            'PASSWORD': os.getenv('DB_PASSWORD', 'postgres'),
+            'PASSWORD': os.getenv('DB_PASSWORD', '1234'),
             'HOST': os.getenv('DB_HOST', 'localhost'),
             'PORT': os.getenv('DB_PORT', '5432'),
         }
@@ -125,6 +131,12 @@ CHANNEL_LAYERS = {
     },
 }
 
+# Add health check settings
+HEALTH_CHECK = {
+    'DISK_USAGE_MAX': 90,  # percent
+    'MEMORY_MIN': 100,     # in MB
+}
+
 # REST Framework configuration
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -149,10 +161,23 @@ REST_FRAMEWORK = {
 
 # JWT configuration
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=60),
+    'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
+    'UPDATE_LAST_LOGIN': True,
+    'ALGORITHM': 'HS256',
+    'SIGNING_KEY': SECRET_KEY,
+    'VERIFYING_KEY': None,
+    'AUDIENCE': None,
+    'ISSUER': None,
+    'JWK_URL': None,
+    'LEEWAY': 0,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+    'AUTH_HEADER_NAME': 'HTTP_AUTHORIZATION',
+    'USER_ID_FIELD': 'id',
+    'USER_ID_CLAIM': 'user_id',
+    'USER_AUTHENTICATION_RULE': 'rest_framework_simplejwt.authentication.default_user_authentication_rule',
 }
 
 # API documentation
@@ -273,3 +298,15 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # Custom user model
 AUTH_USER_MODEL = 'accounts.User'
+
+if DEBUG:
+    EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+else:
+    EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+    EMAIL_HOST = os.getenv('EMAIL_HOST', 'smtp.gmail.com')
+    EMAIL_PORT = int(os.getenv('EMAIL_PORT', '587'))
+    EMAIL_USE_TLS = True
+    EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+    EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+
+DEFAULT_FROM_EMAIL = os.getenv('DEFAULT_FROM_EMAIL', 'noreply@wokkahlearn.com')

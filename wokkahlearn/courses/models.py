@@ -270,7 +270,7 @@ class Exercise(models.Model):
     )
     
     # Testing and validation
-    test_cases = models.JSONField(
+    test_case_data = models.JSONField(
         default=list,
         help_text="Test cases for automatic grading"
     )
