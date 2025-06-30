@@ -93,3 +93,65 @@ INFO 2025-06-30 07:52:16,145 autoreload 23180 19060 C:\Users\admin\Documents\WKL
 INFO 2025-06-30 07:52:18,547 autoreload 2832 20764 Watching for file changes with StatReloader
 INFO 2025-06-30 07:52:54,853 autoreload 2832 20764 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
 INFO 2025-06-30 07:52:56,568 autoreload 14672 9952 Watching for file changes with StatReloader
+INFO 2025-06-30 14:28:39,858 autoreload 16668 17056 Watching for file changes with StatReloader
+INFO 2025-06-30 14:37:13,340 autoreload 16668 17056 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 14:37:16,750 autoreload 17468 20988 Watching for file changes with StatReloader
+INFO 2025-06-30 14:38:20,896 autoreload 17468 20988 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 14:38:22,965 autoreload 828 17648 Watching for file changes with StatReloader
+INFO 2025-06-30 14:38:42,832 autoreload 828 17648 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 14:38:46,762 autoreload 20200 5624 Watching for file changes with StatReloader
+INFO 2025-06-30 14:39:08,133 autoreload 20200 5624 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 14:39:12,050 autoreload 4240 16132 Watching for file changes with StatReloader
+INFO 2025-06-30 14:39:27,650 autoreload 4240 16132 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 14:39:30,515 autoreload 13272 20648 Watching for file changes with StatReloader
+INFO 2025-06-30 14:40:38,623 autoreload 13272 20648 C:\Users\admin\Documents\WKL\wokkahlearn\ai_tutor\views.py changed, reloading.
+INFO 2025-06-30 14:40:42,869 autoreload 11128 20656 Watching for file changes with StatReloader
+INFO 2025-06-30 14:41:09,391 autoreload 11128 20656 C:\Users\admin\Documents\WKL\wokkahlearn\ai_tutor\views.py changed, reloading.
+INFO 2025-06-30 14:41:12,452 autoreload 14992 13572 Watching for file changes with StatReloader
+INFO 2025-06-30 14:41:35,252 autoreload 14992 13572 C:\Users\admin\Documents\WKL\wokkahlearn\ai_tutor\views.py changed, reloading.
+INFO 2025-06-30 14:41:38,698 autoreload 3812 1816 Watching for file changes with StatReloader
+INFO 2025-06-30 14:41:55,402 autoreload 3812 1816 C:\Users\admin\Documents\WKL\wokkahlearn\ai_tutor\views.py changed, reloading.
+INFO 2025-06-30 14:41:58,164 autoreload 14792 4012 Watching for file changes with StatReloader
+INFO 2025-06-30 14:42:15,447 autoreload 14792 4012 C:\Users\admin\Documents\WKL\wokkahlearn\ai_tutor\views.py changed, reloading.
+INFO 2025-06-30 14:42:18,313 autoreload 17512 2912 Watching for file changes with StatReloader
+INFO 2025-06-30 14:42:52,672 autoreload 17512 2912 C:\Users\admin\Documents\WKL\wokkahlearn\code_execution\urls.py changed, reloading.
+INFO 2025-06-30 14:42:54,784 autoreload 4236 14132 Watching for file changes with StatReloader
+INFO 2025-06-30 14:43:34,905 autoreload 14408 2424 Watching for file changes with StatReloader
+INFO 2025-06-30 14:44:07,688 autoreload 15768 8644 Watching for file changes with StatReloader
+INFO 2025-06-30 14:45:40,387 autoreload 15768 8644 C:\Users\admin\Documents\WKL\wokkahlearn\code_execution\urls.py changed, reloading.
+INFO 2025-06-30 14:45:42,936 autoreload 14632 11552 Watching for file changes with StatReloader
+INFO 2025-06-30 14:46:07,516 autoreload 14632 11552 C:\Users\admin\Documents\WKL\wokkahlearn\code_execution\urls.py changed, reloading.
+INFO 2025-06-30 14:46:09,990 autoreload 5892 22308 Watching for file changes with StatReloader
+INFO 2025-06-30 14:46:30,657 autoreload 5892 22308 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\urls.py changed, reloading.
+INFO 2025-06-30 14:46:33,116 autoreload 19660 19312 Watching for file changes with StatReloader
+INFO 2025-06-30 14:46:37,603 autoreload 19660 19312 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\urls.py changed, reloading.
+INFO 2025-06-30 14:46:39,567 autoreload 13252 808 Watching for file changes with StatReloader
+INFO 2025-06-30 14:46:45,190 autoreload 13252 808 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\urls.py changed, reloading.
+INFO 2025-06-30 14:46:47,020 autoreload 5228 16276 Watching for file changes with StatReloader
+INFO 2025-06-30 15:15:35,338 autoreload 22068 9200 Watching for file changes with StatReloader
+INFO 2025-06-30 15:15:44,102 basehttp 22068 22704 code 400, message Bad request version ('\x90«¹\x88\x7f¶(\x12%\x11B@\x94¹R\x95!fO\x95P=\x9388Ò+\x89>\x93°pU\x08¢\x91^&W°aE¼\x93Cjd\x90H\x91')
+ERROR 2025-06-30 15:15:44,103 basehttp 22068 22704 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:44,371 basehttp 22068 16920 code 400, message Bad request version ('ª\x07Ç\x7f´')
+ERROR 2025-06-30 15:15:44,373 basehttp 22068 16920 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:44,434 basehttp 22068 13648 code 400, message Bad request syntax ('\x16\x03\x01\x06²\x01\x00\x06®\x03\x03ìä\x94õ¶\x80K[\x17ô')
+ERROR 2025-06-30 15:15:44,436 basehttp 22068 13648 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:44,690 basehttp 22068 6464 code 400, message Bad request version ('\x02h2\x08http/1.1\x003\x04ï\x04íZZ\x00\x01\x00\x11ì\x04ÀäÁ\x1a\x8aä"\x02')
+ERROR 2025-06-30 15:15:44,692 basehttp 22068 6464 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:46,173 basehttp 22068 7152 code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00-\x00\x02\x01\x01\x00\x1b\x00\x03\x02\x00\x02\x00+\x00\x07\x06ÚÚ\x03\x04\x03\x03\x00')
+ERROR 2025-06-30 15:15:46,329 basehttp 22068 7152 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:46,502 basehttp 22068 16012 code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06s\x1a\x1a\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-06-30 15:15:46,571 basehttp 22068 16012 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:49,484 basehttp 22068 18896 code 400, message Bad request version ('ö\x98cÜåU3²ñ')
+ERROR 2025-06-30 15:15:49,485 basehttp 22068 18896 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:49,489 basehttp 22068 14228 code 400, message Bad request version ('öq\x86Ë?')
+ERROR 2025-06-30 15:15:49,489 basehttp 22068 14228 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:49,632 basehttp 22068 18212 code 400, message Bad request version ('\x06\x00')
+ERROR 2025-06-30 15:15:49,634 basehttp 22068 18212 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:15:49,639 basehttp 22068 3432 code 400, message Bad request version ('**\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93::\x00\x00\x00')
+ERROR 2025-06-30 15:15:49,640 basehttp 22068 3432 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:16:32,588 basehttp 22068 19736 code 400, message Bad request version ('\x81gäª\x8a°!\x00\x80Ø³øÅsã7«ÄC=µ[®bÚ\x108\x15APE\x92ðæc[\x99W.\x82f\x7fj½VÉy.Ø_èæ=»\x86¶ú\x04\x95¨VAÑ*>,²Vµ§\x00\x1bS\x11\x8cØJÝ')
+ERROR 2025-06-30 15:16:32,595 basehttp 22068 19736 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:16:32,603 basehttp 22068 6888 code 400, message Bad request syntax ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03o-¶}[Ü\x0e')
+ERROR 2025-06-30 15:16:32,603 basehttp 22068 6888 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 15:17:10,588 autoreload 22068 9200 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-30 15:17:36,973 autoreload 3828 18228 Watching for file changes with StatReloader

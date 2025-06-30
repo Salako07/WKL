@@ -1,59 +1,84 @@
-# accounts/management/commands/setup_initial_data.py
+"""
+Django management command to create test data
+Usage: python manage.py setup_test_data
+"""
+
 from django.core.management.base import BaseCommand
 from django.contrib.auth import get_user_model
-from accounts.models import Organization, UserProfile
-from courses.models import CourseCategory
+from courses.models import CourseCategory, Course, Module, Lesson, Exercise
 from code_execution.models import ExecutionEnvironment
-from ai_tutor.models import AIModel
+from collaboration.models import CollaborationRoom
 from datetime import timedelta
 
 User = get_user_model()
 
 class Command(BaseCommand):
-    help = 'Set up initial data for WokkahLearn platform'
+    help = 'Set up test data for WokkahLearn'
 
     def handle(self, *args, **options):
-        self.stdout.write('Setting up initial data...')
+        self.stdout.write('🚀 Setting up test data...')
         
-        # Create superuser if doesn't exist
-        if not User.objects.filter(is_superuser=True).exists():
-            superuser=User.objects.create_superuser(
-                username='admin',
-                email='admin@wokkahlearn.com',
-                password='admin123',
-                first_name='System',
-                last_name='Administrator'
-            )
-            superuser.total_study_time = timedelta(0)
-            superuser.save()
-            self.stdout.write(self.style.SUCCESS('Created superuser: admin/admin123'))
-        
-        # Create course categories
-        categories = [
-            {'name': 'Python Programming', 'icon': 'python', 'color': '#3776ab'},
-            {'name': 'JavaScript', 'icon': 'javascript', 'color': '#f7df1e'},
-            {'name': 'Java', 'icon': 'java', 'color': '#ed8b00'},
-            {'name': 'Data Science', 'icon': 'chart-line', 'color': '#ff6b6b'},
-            {'name': 'Web Development', 'icon': 'globe', 'color': '#4ecdc4'},
-            {'name': 'Machine Learning', 'icon': 'brain', 'color': '#a8e6cf'},
-            {'name': 'Mobile Development', 'icon': 'mobile', 'color': '#ffd93d'},
-            {'name': 'DevOps', 'icon': 'cogs', 'color': '#6c5ce7'},
-        ]
-        
-        for i, cat_data in enumerate(categories):
-            category, created = CourseCategory.objects.get_or_create(
-                name=cat_data['name'],
-                defaults={
-                    'description': f"Learn {cat_data['name']} from basics to advanced",
-                    'icon': cat_data['icon'],
-                    'color': cat_data['color'],
-                    'order': i + 1
-                }
-            )
-            if created:
-                self.stdout.write(f'Created category: {category.name}')
+        # Create test users
+        self.create_test_users()
         
         # Create execution environments
+        self.create_execution_environments()
+        
+        # Create course categories
+        self.create_course_categories()
+        
+        # Create sample course
+        self.create_sample_course()
+        
+        # Create collaboration room
+        self.create_collaboration_room()
+        
+        self.stdout.write(
+            self.style.SUCCESS('✅ Test data setup completed!')
+        )
+    
+    def create_test_users(self):
+        """Create test users with different roles"""
+        users_data = [
+            {
+                'username': 'instructor1',
+                'email': 'instructor@wokkahlearn.com',
+                'first_name': 'John',
+                'last_name': 'Teacher',
+                'role': 'instructor',
+                'password': 'instructor123'
+            },
+            {
+                'username': 'student1',
+                'email': 'student@wokkahlearn.com',
+                'first_name': 'Jane',
+                'last_name': 'Student',
+                'role': 'student',
+                'password': 'student123'
+            },
+            {
+                'username': 'mentor1',
+                'email': 'mentor@wokkahlearn.com',
+                'first_name': 'Bob',
+                'last_name': 'Mentor',
+                'role': 'mentor',
+                'password': 'mentor123'
+            }
+        ]
+        
+        for user_data in users_data:
+            password = user_data.pop('password')
+            user, created = User.objects.get_or_create(
+                username=user_data['username'],
+                defaults=user_data
+            )
+            if created:
+                user.set_password(password)
+                user.save()
+                self.stdout.write(f'✅ Created user: {user.username}')
+    
+    def create_execution_environments(self):
+        """Create code execution environments"""
         environments = [
             {
                 'name': 'Python 3.11',
@@ -62,38 +87,15 @@ class Command(BaseCommand):
                 'docker_image': 'python:3.11-alpine',
                 'file_extension': '.py',
                 'interpreter_command': 'python',
-                'installed_packages': ['numpy', 'pandas', 'matplotlib', 'requests'],
                 'is_default': True
             },
             {
-                'name': 'Node.js 18',
+                'name': 'JavaScript Node 18',
                 'language': 'javascript',
                 'version': '18',
                 'docker_image': 'node:18-alpine',
                 'file_extension': '.js',
-                'interpreter_command': 'node',
-                'installed_packages': ['lodash', 'axios', 'moment'],
-                'is_default': False
-            },
-            {
-                'name': 'Java 17',
-                'language': 'java',
-                'version': '17',
-                'docker_image': 'openjdk:17-alpine',
-                'file_extension': '.java',
-                'compiler_command': 'javac',
-                'installed_packages': [],
-                'is_default': False
-            },
-            {
-                'name': 'C++ GCC',
-                'language': 'cpp',
-                'version': '11',
-                'docker_image': 'gcc:11-alpine',
-                'file_extension': '.cpp',
-                'compiler_command': 'g++',
-                'installed_packages': [],
-                'is_default': False
+                'interpreter_command': 'node'
             }
         ]
         
@@ -104,60 +106,108 @@ class Command(BaseCommand):
                 defaults=env_data
             )
             if created:
-                self.stdout.write(f'Created execution environment: {env.name}')
-        
-        # Create AI models
-        ai_models = [
+                self.stdout.write(f'✅ Created environment: {env.name}')
+    
+    def create_course_categories(self):
+        """Create course categories"""
+        categories = [
             {
-                'name': 'GPT-4 Tutor',
-                'model_type': 'tutor',
-                'provider': 'openai',
-                'model_id': 'gpt-4',
-                'supports_code': True,
-                'programming_languages': ['python', 'javascript', 'java', 'cpp', 'html', 'css'],
-                'is_default': True
+                'name': 'Python Programming',
+                'description': 'Learn Python from basics to advanced',
+                'icon': 'python',
+                'color': '#3776ab'
             },
             {
-                'name': 'Claude Code Assistant',
-                'model_type': 'code_assistant',
-                'provider': 'anthropic',
-                'model_id': 'claude-3-sonnet',
-                'supports_code': True,
-                'programming_languages': ['python', 'javascript', 'java', 'cpp'],
-                'is_default': False
-            },
-            {
-                'name': 'GPT-3.5 Explainer',
-                'model_type': 'explainer',
-                'provider': 'openai',
-                'model_id': 'gpt-3.5-turbo',
-                'supports_code': True,
-                'programming_languages': ['python', 'javascript'],
-                'is_default': False
+                'name': 'Web Development',
+                'description': 'Build modern web applications',
+                'icon': 'globe',
+                'color': '#61dafb'
             }
         ]
         
-        for model_data in ai_models:
-            model, created = AIModel.objects.get_or_create(
-                name=model_data['name'],
-                defaults=model_data
+        for cat_data in categories:
+            category, created = CourseCategory.objects.get_or_create(
+                name=cat_data['name'],
+                defaults=cat_data
             )
             if created:
-                self.stdout.write(f'Created AI model: {model.name}')
+                self.stdout.write(f'✅ Created category: {category.name}')
+    
+    def create_sample_course(self):
+        """Create a sample course with lessons and exercises"""
+        instructor = User.objects.get(username='instructor1')
+        category = CourseCategory.objects.get(name='Python Programming')
         
-        # Create sample organization
-        org, created = Organization.objects.get_or_create(
-            name='WokkahLearn Academy',
+        course, created = Course.objects.get_or_create(
+            title='Python Fundamentals',
             defaults={
-                'slug': 'wokkahlearn-academy',
-                'org_type': 'school',
-                'description': 'Default organization for WokkahLearn platform',
-                'contact_email': 'contact@wokkahlearn.com',
-                'domain_whitelist': ['wokkahlearn.com'],
-                'subscription_tier': 'enterprise'
+                'instructor': instructor,
+                'category': category,
+                'description': 'Learn Python programming from scratch',
+                'short_description': 'Complete Python course for beginners',
+                'difficulty_level': 'beginner',
+                'status': 'published',
+                'estimated_duration': timedelta(hours=40),
+                'is_free': True,
+                'learning_objectives': ['Learn Python syntax', 'Build projects'],
+                'skills_gained': ['Python', 'Programming']
             }
         )
-        if created:
-            self.stdout.write(f'Created organization: {org.name}')
         
-        self.stdout.write(self.style.SUCCESS('Initial data setup completed!'))
+        if created:
+            self.stdout.write(f'✅ Created course: {course.title}')
+            
+            # Create module
+            module = Module.objects.create(
+                course=course,
+                title='Python Basics',
+                description='Learn the fundamentals of Python',
+                order=1,
+                estimated_duration=timedelta(hours=10)
+            )
+            
+            # Create lesson
+            lesson = Lesson.objects.create(
+                module=module,
+                title='Variables and Data Types',
+                lesson_type='text',
+                content='# Variables in Python\n\nPython variables are containers for storing data...',
+                order=1,
+                estimated_duration=timedelta(minutes=30)
+            )
+            
+            # Create exercise
+            Exercise.objects.create(
+                lesson=lesson,
+                title='Create Your First Variables',
+                exercise_type='coding',
+                description='Create variables of different data types',
+                starter_code='# Create variables here\nname = \nage = \n',
+                solution_code='name = "John"\nage = 25\nprint(f"Name: {name}, Age: {age}")',
+                programming_language='python',
+                order=1,
+                points=10
+            )
+            
+            self.stdout.write(f'✅ Created module, lesson, and exercise')
+    
+    def create_collaboration_room(self):
+        """Create a sample collaboration room"""
+        creator = User.objects.get(username='instructor1')
+        
+        room, created = CollaborationRoom.objects.get_or_create(
+            title='Python Study Group',
+            defaults={
+                'creator': creator,
+                'description': 'Collaborative Python learning session',
+                'room_type': 'study_group',
+                'is_public': True,
+                'max_participants': 10,
+                'allow_screen_sharing': True,
+                'allow_code_execution': True
+            }
+        )
+        
+        if created:
+            self.stdout.write(f'✅ Created collaboration room: {room.title}')
+            self.stdout.write(f'   Room code: {room.room_code}')

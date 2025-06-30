@@ -20,6 +20,7 @@ from .serializers import (
 
 class AIModelViewSet(viewsets.ReadOnlyModelViewSet):
     """API endpoints for AI models"""
+    queryset = AIModel.objects.all()
     queryset = AIModel.objects.filter(is_active=True)
     serializer_class = AIModelSerializer
     permission_classes = [IsAuthenticated]
@@ -39,6 +40,7 @@ class AIModelViewSet(viewsets.ReadOnlyModelViewSet):
 
 class AITutorSessionViewSet(viewsets.ModelViewSet):
     """API endpoints for AI tutor sessions"""
+    queryset = AITutorSession.objects.all()
     serializer_class = AITutorSessionSerializer
     permission_classes = [IsAuthenticated]
     
@@ -172,6 +174,7 @@ class AITutorSessionViewSet(viewsets.ModelViewSet):
 
 class AIMessageViewSet(viewsets.ReadOnlyModelViewSet):
     """API endpoints for AI messages"""
+    queryset = AIMessage.objects.all()
     serializer_class = AIMessageSerializer
     permission_classes = [IsAuthenticated]
     
@@ -183,6 +186,7 @@ class AIMessageViewSet(viewsets.ReadOnlyModelViewSet):
 
 class LearningPathRecommendationViewSet(viewsets.ModelViewSet):
     """API endpoints for learning path recommendations"""
+    queryset = LearningPathRecommendation.objects.all()
     serializer_class = LearningPathRecommendationSerializer
     permission_classes = [IsAuthenticated]
     
@@ -237,6 +241,7 @@ class LearningPathRecommendationViewSet(viewsets.ModelViewSet):
 
 
 class CodeAnalysisResultViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = CodeAnalysisResult.objects.all()
     """API endpoints for code analysis results"""
     serializer_class = CodeAnalysisResultSerializer
     permission_classes = [IsAuthenticated]
@@ -275,6 +280,7 @@ class CodeAnalysisResultViewSet(viewsets.ReadOnlyModelViewSet):
 
 class PersonalizedQuizViewSet(viewsets.ModelViewSet):
     """API endpoints for personalized quizzes"""
+    queryset = PersonalizedQuiz.objects.all()
     serializer_class = PersonalizedQuizSerializer
     permission_classes = [IsAuthenticated]
     

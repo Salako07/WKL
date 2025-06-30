@@ -1,4 +1,4 @@
-from django.urls import path, include
+"""from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from .views import (
     LearningAnalyticsViewSet, StudySessionViewSet, PerformanceMetricViewSet,
@@ -14,4 +14,4 @@ router.register(r'course-analytics', CourseAnalyticsViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
-]
+]"""

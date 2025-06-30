@@ -73,6 +73,7 @@ class CourseCategoryViewSet(viewsets.ModelViewSet):
 
 class CourseViewSet(viewsets.ModelViewSet):
     """API endpoints for courses"""
+    queryset = Course.objects.all()
     serializer_class = CourseSerializer
     permission_classes = [permissions.AllowAny]  # Public courses viewable by all
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -277,6 +278,7 @@ class CourseViewSet(viewsets.ModelViewSet):
 
 class ModuleViewSet(viewsets.ModelViewSet):
     """API endpoints for course modules"""
+    queryset = Module.objects.all()
     serializer_class = ModuleSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, OrderingFilter]
@@ -316,6 +318,7 @@ class ModuleViewSet(viewsets.ModelViewSet):
 
 class LessonViewSet(viewsets.ModelViewSet):
     """API endpoints for lessons"""
+    queryset = Lesson.objects.all()
     serializer_class = LessonSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -442,6 +445,7 @@ class LessonViewSet(viewsets.ModelViewSet):
 
 class ExerciseViewSet(viewsets.ModelViewSet):
     """API endpoints for exercises"""
+    queryset = Exercise.objects.all()
     serializer_class = ExerciseSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, SearchFilter, OrderingFilter]
@@ -563,6 +567,7 @@ class ExerciseViewSet(viewsets.ModelViewSet):
 
 class CourseEnrollmentViewSet(viewsets.ReadOnlyModelViewSet):
     """API endpoints for course enrollments (read-only)"""
+    queryset = CourseEnrollment.objects.all()
     serializer_class = CourseEnrollmentSerializer
     permission_classes = [permissions.IsAuthenticated]
     filter_backends = [DjangoFilterBackend, OrderingFilter]
