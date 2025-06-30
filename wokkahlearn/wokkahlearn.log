@@ -86,3 +86,9 @@ INFO 2025-06-30 07:30:48,532 autoreload 8084 7340 Watching for file changes with
 INFO 2025-06-30 07:37:58,802 autoreload 8084 7340 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
 INFO 2025-06-30 07:38:03,147 autoreload 17500 7496 Watching for file changes with StatReloader
 INFO 2025-06-30 07:39:13,658 autoreload 17500 7496 C:\Users\admin\Documents\WKL\wokkahlearn\courses\serializers.py changed, reloading.
+INFO 2025-06-30 07:39:15,981 autoreload 15296 8460 Watching for file changes with StatReloader
+INFO 2025-06-30 07:47:14,213 autoreload 15296 8460 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 07:47:17,773 autoreload 23180 19060 Watching for file changes with StatReloader
+INFO 2025-06-30 07:52:16,145 autoreload 23180 19060 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 07:52:18,547 autoreload 2832 20764 Watching for file changes with StatReloader
+INFO 2025-06-30 07:52:54,853 autoreload 2832 20764 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
