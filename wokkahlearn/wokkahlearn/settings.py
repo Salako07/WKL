@@ -80,32 +80,27 @@ TEMPLATES = [
         },
     },
 ]
-import os
-from django.core.wsgi import get_wsgi_application
 
-# CRITICAL: Make sure this points to the correct settings module
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'wokkahlearn.settings')
-
-application = get_wsgi_application()
 #WSGI_APPLICATION = 'wokkahlearn.wsgi.application'
 ASGI_APPLICATION = 'wokkahlearn.asgi.application'
 
 # Database configuration
-if os.getenv('DATABASE_URL'):
-    DATABASES = {
-        'default': dj_database_url.parse(os.getenv('DATABASE_URL'))
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('DB_NAME', 'codemaster'),
+        'USER': os.getenv('DB_USER', 'postgres'),
+        'PASSWORD': os.getenv('DB_PASSWORD', '1234'),
+        'HOST': os.getenv('DB_HOST', 'localhost'),
+        'PORT': os.getenv('DB_PORT', '5432'),
+        #'OPTIONS': {
+        #    'charset': 'utf8mb4',
+        #},
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql',
-            'NAME': os.getenv('DB_NAME', 'WokkahLearn'),
-            'USER': os.getenv('DB_USER', 'postgres'),
-            'PASSWORD': os.getenv('DB_PASSWORD', '1234'),
-            'HOST': os.getenv('DB_HOST', 'localhost'),
-            'PORT': os.getenv('DB_PORT', '5432'),
-        }
-    }
+}
+
+print (f"Database config:{DATABASES}")
 
 # Redis configuration
 REDIS_URL = os.getenv('REDIS_URL', 'redis://localhost:6379/0')

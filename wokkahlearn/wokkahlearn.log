@@ -14,3 +14,34 @@ INFO 2025-06-29 22:42:12,055 autoreload 22464 21280 C:\Users\admin\Documents\WKL
 INFO 2025-06-29 22:42:17,811 autoreload 18504 12768 Watching for file changes with StatReloader
 INFO 2025-06-29 22:55:19,641 autoreload 19944 14620 Watching for file changes with StatReloader
 INFO 2025-06-29 23:01:33,683 autoreload 19944 14620 C:\Users\admin\Documents\WKL\wokkahlearn\wokkahlearn\settings.py changed, reloading.
+INFO 2025-06-30 05:42:51,526 autoreload 10984 16032 Watching for file changes with StatReloader
+INFO 2025-06-30 05:45:29,879 autoreload 4384 1436 Watching for file changes with StatReloader
+INFO 2025-06-30 05:45:40,323 basehttp 4384 14308 "GET / HTTP/1.1" 301 0
+INFO 2025-06-30 05:45:40,337 basehttp 4384 13004 code 400, message Bad request version ('ZZ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x063ÚÚ\x00\x00\x00-\x00\x02\x01\x01\x00')
+ERROR 2025-06-30 05:45:40,339 basehttp 4384 13004 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:45:40,345 basehttp 4384 17464 code 400, message Bad request version ('Ä\x16½Á"\x9eÔy\x06Ö\x9f«÷\x96Á\x9f²\x84ºiúãÆÚáj\x00')
+ERROR 2025-06-30 05:45:40,345 basehttp 4384 17464 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:45:54,932 basehttp 4384 1444 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06à\x01\x00\x06Ü\x03\x03ª\x16|ø÷')
+ERROR 2025-06-30 05:45:54,935 basehttp 4384 1444 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:45:54,947 basehttp 4384 2144 code 400, message Bad request version ('ø')
+ERROR 2025-06-30 05:45:54,982 basehttp 4384 2144 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:46:34,999 basehttp 4384 9700 "GET /api/schema/swagger-ui/ HTTP/1.1" 301 0
+INFO 2025-06-30 05:46:35,326 basehttp 4384 20292 code 400, message Bad request version ('dcnW5\x9aìGT\x19')
+ERROR 2025-06-30 05:46:35,326 basehttp 4384 20292 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:46:35,592 basehttp 4384 14512 code 400, message Bad request version ('{¬Z½^N0e\x9ai±Aµ\x7fççÇ\x13')
+ERROR 2025-06-30 05:46:35,594 basehttp 4384 14512 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:46:35,676 basehttp 4384 3232 code 400, message Bad request version ('\x02h2\x08http/1.1\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+ERROR 2025-06-30 05:46:35,678 basehttp 4384 3232 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:46:35,916 basehttp 4384 9132 code 400, message Bad request version ('localhost\x00-\x00\x02\x01\x01\x00\x17\x00\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00\x00')
+ERROR 2025-06-30 05:46:35,917 basehttp 4384 9132 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:48:40,100 basehttp 4384 3392 code 400, message Bad request version ('êê\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06e')
+ERROR 2025-06-30 05:48:40,106 basehttp 4384 3392 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:48:40,355 basehttp 4384 22608 code 400, message Bad request version ('s"\x89\x83\x9c¸M\'')
+ERROR 2025-06-30 05:48:40,357 basehttp 4384 22608 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:48:40,430 basehttp 4384 3060 code 400, message Bad request version ('localhostDÍ\x00\x05\x00\x03\x02h2\x003\x04ï\x04í')
+ERROR 2025-06-30 05:48:40,432 basehttp 4384 3060 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:48:40,677 basehttp 4384 14280 code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00+\x00\x07\x06ÚÚ\x03\x04\x03\x03\x00')
+ERROR 2025-06-30 05:48:40,677 basehttp 4384 14280 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:50:51,677 autoreload 4384 1436 C:\Users\admin\Documents\WKL\wokkahlearn\courses\models.py changed, reloading.
+INFO 2025-06-30 05:50:57,356 autoreload 19480 19476 Watching for file changes with StatReloader
+INFO 2025-06-30 05:53:46,245 autoreload 16764 18748 Watching for file changes with StatReloader
