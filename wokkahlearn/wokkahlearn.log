@@ -45,3 +45,44 @@ ERROR 2025-06-30 05:48:40,677 basehttp 4384 14280 You're accessing the developme
 INFO 2025-06-30 05:50:51,677 autoreload 4384 1436 C:\Users\admin\Documents\WKL\wokkahlearn\courses\models.py changed, reloading.
 INFO 2025-06-30 05:50:57,356 autoreload 19480 19476 Watching for file changes with StatReloader
 INFO 2025-06-30 05:53:46,245 autoreload 16764 18748 Watching for file changes with StatReloader
+INFO 2025-06-30 05:53:55,686 basehttp 16764 9652 code 400, message Bad request version ('\x94[ÿ<\x08/SÍV?')
+ERROR 2025-06-30 05:53:55,687 basehttp 16764 9652 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:55,927 basehttp 16764 8228 code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+ERROR 2025-06-30 05:53:55,929 basehttp 16764 8228 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:56,002 basehttp 16764 21344 code 400, message Bad request version ('\x8a\x8a\x00\x00\x00')
+ERROR 2025-06-30 05:53:56,004 basehttp 16764 21344 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:56,245 basehttp 16764 14304 code 400, message Bad request version ('ã`Ï\x07\x7fá*¹ìFc_x6Î\x8bBöy\x874ù§\x9cs¢¹à&')
+ERROR 2025-06-30 05:53:56,246 basehttp 16764 14304 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:59,615 basehttp 16764 8320 code 400, message Bad request syntax ('\x16\x03\x01\x06Ò\x01\x00\x06Î\x03\x03\x0e\x15ÅÖ!9¡\x8f3a94\x88\x99WÃ')
+ERROR 2025-06-30 05:53:59,616 basehttp 16764 8320 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:59,868 basehttp 16764 908 code 400, message Bad request version ('\x9bÚ\x82\x0emcè4ó\x8aË')
+ERROR 2025-06-30 05:53:59,870 basehttp 16764 908 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:53:59,925 basehttp 16764 17624 code 400, message Bad request version ('zz\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06')
+ERROR 2025-06-30 05:53:59,926 basehttp 16764 17624 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:00,180 basehttp 16764 19248 code 400, message Bad request version ('ô¯\x8d')
+ERROR 2025-06-30 05:54:00,181 basehttp 16764 19248 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:02,916 basehttp 16764 20824 code 400, message Bad request version ('vÔò\x9b\x11\x8c1e\x0fÞ&')
+ERROR 2025-06-30 05:54:02,917 basehttp 16764 20824 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:02,923 basehttp 16764 19240 code 400, message Bad request version ("\x88\x91ÐÜ$Ýu\x07'")
+ERROR 2025-06-30 05:54:02,932 basehttp 16764 19240 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:04,553 basehttp 16764 20844 code 400, message Bad request version ('2nâR\x1b\x97')
+ERROR 2025-06-30 05:54:04,555 basehttp 16764 20844 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:04,563 basehttp 16764 5828 code 400, message Bad HTTP/0.9 request type ('\x16\x03\x01\x06')
+ERROR 2025-06-30 05:54:04,564 basehttp 16764 5828 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:19,861 basehttp 16764 13880 code 400, message Bad request version ('\x00\x02\x01\x00\x00-\x00\x02\x01\x01\x003\x04ï\x04í')
+ERROR 2025-06-30 05:54:19,864 basehttp 16764 13880 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:19,869 basehttp 16764 2040 code 400, message Bad request version ('\x00\x02\x01\x00\x00\x05\x00\x05\x01\x00\x00\x00\x00ÿ\x01\x00\x01\x00\x00#\x00\x00\x00\x1b\x00\x03\x02\x00\x02\x00')
+ERROR 2025-06-30 05:54:19,869 basehttp 16764 2040 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:30,358 basehttp 16764 16768 "GET /admin/ HTTP/1.1" 301 0
+INFO 2025-06-30 05:54:30,672 basehttp 16764 20572 code 400, message Bad request version ('+x2h\x96\x16YxÃ#\x08üonS-½VÊÃ+¿z×Ärì\x16dÃ\x97.¨\x9b\x11\x92ÉJ\x94Í>GÉ\x83¼Çk\x12¼Lã\x13Èg\x1b*4ÀkK\x00*4')
+ERROR 2025-06-30 05:54:30,675 basehttp 16764 20572 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:30,939 basehttp 16764 18340 code 400, message Bad request version ('±\x18\x8dF\x08¶ÐöZ0Àì')
+ERROR 2025-06-30 05:54:30,941 basehttp 16764 18340 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:31,009 basehttp 16764 13368 code 400, message Bad request version ('Ó\x05n')
+ERROR 2025-06-30 05:54:31,011 basehttp 16764 13368 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 05:54:31,259 basehttp 16764 23532 code 400, message Bad request version ('¿Ò\x997"\x83^\x98[ê·hrû~\x04C\x1bLõÆ§»)é\x92\x99Rg\x05a\x95@')
+ERROR 2025-06-30 05:54:31,260 basehttp 16764 23532 You're accessing the development server over HTTPS, but it only supports HTTP.
+INFO 2025-06-30 07:30:48,532 autoreload 8084 7340 Watching for file changes with StatReloader
+INFO 2025-06-30 07:37:58,802 autoreload 8084 7340 C:\Users\admin\Documents\WKL\wokkahlearn\courses\views.py changed, reloading.
+INFO 2025-06-30 07:38:03,147 autoreload 17500 7496 Watching for file changes with StatReloader
+INFO 2025-06-30 07:39:13,658 autoreload 17500 7496 C:\Users\admin\Documents\WKL\wokkahlearn\courses\serializers.py changed, reloading.

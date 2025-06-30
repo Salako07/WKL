@@ -1,3 +1,4 @@
+# api/serializers.py
 from rest_framework import serializers
 from django.contrib.auth import get_user_model
 from courses.models import (
@@ -7,8 +8,16 @@ from courses.models import (
 from accounts.models import UserProfile, UserSkill, UserAchievement
 from ai_tutor.models import AITutorSession, AIMessage, LearningPathRecommendation
 from code_execution.models import CodeExecution, ExecutionEnvironment, TestResult
-from collaboration.models import CollaborationRoom, RoomParticipant, ChatMessage
 from analytics.models import LearningAnalytics, StudySession, PerformanceMetric
+
+# Import collaboration serializers from collaboration app
+from collaboration.serializers import (
+    CollaborationRoomSerializer, RoomParticipantSerializer, 
+    ChatMessageSerializer, SharedCodeSessionSerializer,
+    HelpRequestSerializer, DetailedCollaborationRoomSerializer,
+    CreateCollaborationRoomSerializer, CreateHelpRequestSerializer,
+    CreateChatMessageSerializer
+)
 
 User = get_user_model()
 
@@ -235,15 +244,17 @@ class ExerciseSubmissionSerializer(serializers.ModelSerializer):
         ]
     
     def get_test_results_summary(self, obj):
-        test_results = obj.execution.test_results.all() if hasattr(obj, 'execution') else []
-        total_tests = len(test_results)
-        passed_tests = sum(1 for result in test_results if result.status == 'passed')
-        
-        return {
-            'total_tests': total_tests,
-            'passed_tests': passed_tests,
-            'success_rate': (passed_tests / total_tests * 100) if total_tests > 0 else 0
-        }
+        if hasattr(obj, 'execution'):
+            test_results = obj.execution.test_results.all()
+            total_tests = len(test_results)
+            passed_tests = sum(1 for result in test_results if result.status == 'passed')
+            
+            return {
+                'total_tests': total_tests,
+                'passed_tests': passed_tests,
+                'success_rate': (passed_tests / total_tests * 100) if total_tests > 0 else 0
+            }
+        return None
 
 
 # AI Tutor Serializers
@@ -336,71 +347,6 @@ class CodeExecutionSerializer(serializers.ModelSerializer):
                 'total_tests': total,
                 'passed_tests': passed,
                 'success_rate': (passed / total * 100) if total > 0 else 0
-            }
-        return None
-
-
-# Collaboration Serializers
-class CollaborationRoomSerializer(serializers.ModelSerializer):
-    creator = UserSerializer(read_only=True)
-    participant_count = serializers.SerializerMethodField()
-    user_role = serializers.SerializerMethodField()
-    
-    class Meta:
-        model = CollaborationRoom
-        fields = [
-            'id', 'title', 'description', 'room_type', 'status',
-            'room_code', 'is_public', 'max_participants', 'creator',
-            'allow_screen_sharing', 'allow_voice_chat', 'allow_code_execution',
-            'scheduled_start', 'scheduled_end', 'participant_count',
-            'user_role', 'created_at'
-        ]
-        read_only_fields = ['id', 'room_code', 'creator', 'created_at']
-    
-    def get_participant_count(self, obj):
-        return obj.participants.filter(status='active').count()
-    
-    def get_user_role(self, obj):
-        request = self.context.get('request')
-        if request and request.user.is_authenticated:
-            try:
-                participant = obj.participants.get(user=request.user)
-                return participant.role
-            except RoomParticipant.DoesNotExist:
-                pass
-        return None
-
-
-class RoomParticipantSerializer(serializers.ModelSerializer):
-    user = UserSerializer(read_only=True)
-    
-    class Meta:
-        model = RoomParticipant
-        fields = [
-            'id', 'user', 'role', 'status', 'can_edit_code',
-            'can_execute_code', 'can_share_screen', 'messages_sent',
-            'last_activity', 'joined_at'
-        ]
-
-
-class ChatMessageSerializer(serializers.ModelSerializer):
-    sender = UserSerializer(read_only=True)
-    reply_to = serializers.SerializerMethodField()
-    
-    class Meta:
-        model = ChatMessage
-        fields = [
-            'id', 'sender', 'message_type', 'content', 'metadata',
-            'is_pinned', 'is_edited', 'reply_to', 'reactions', 'created_at'
-        ]
-        read_only_fields = ['id', 'sender', 'created_at']
-    
-    def get_reply_to(self, obj):
-        if obj.reply_to:
-            return {
-                'id': obj.reply_to.id,
-                'content': obj.reply_to.content[:50] + '...' if len(obj.reply_to.content) > 50 else obj.reply_to.content,
-                'sender': obj.reply_to.sender.username
             }
         return None
 

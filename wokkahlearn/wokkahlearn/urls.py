@@ -1,3 +1,4 @@
+# wokkahlearn/urls.py - Updated with all apps
 from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
@@ -7,14 +8,21 @@ from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, Sp
 urlpatterns = [
     path('admin/', admin.site.urls),
     
-    # API endpoints
-    path('api/', include('api.urls')),
+    # Health check
+    path('health/', include('health_check.urls')),
     
     # Authentication
     path('api/auth/', include('accounts.urls')),
     
-    # Health check
-    path('health/', include('health_check.urls')),
+    # Main API endpoints
+    path('api/', include('api.urls')),
+    
+    # Individual app APIs
+    path('api/courses/', include('courses.urls')),
+    path('api/ai-tutor/', include('ai_tutor.urls')),
+    path('api/code-execution/', include('code_execution.urls')),
+    path('api/collaboration/', include('collaboration.urls')),
+    path('api/analytics/', include('analytics.urls')),
     
     # API documentation
     path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
